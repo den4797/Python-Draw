@@ -1,15 +1,15 @@
 import turtle
 
 class Figure:
-    pen = turtle.pen()
-
-    def __init__(self, color='black', width=1, angle=60, size=100)
+    pen = turtle.Pen()
+    
+    def __init__(self, color='black', width=1, angle=60, size=100):
         self.pen.color(color)
         self.pen.width(width)
         self.angle = angle
         self.size = size
 
-    def render(self, itters, is_right=True)
+    def render(self, itters, is_right=True):
         itters = range(itters)
 
         turn = self.pen.right if is_right else self.pen.left
@@ -21,13 +21,12 @@ class Figure:
         turtle.done()
 
 
-class Dynamicfigure(Figure):
-    def __init__(self, color='black', width=1, angle=60, size=100, diff=1)
-    super().__init__(color='black', width=1, angle=60, size=100)
-    self.diff = diff
+class DynamicFigure(Figure):
+    def __init__(self, color='black', width=1, angle=60, size=100, diff=1):
+        super().__init__(color='black', width=1, angle=60, size=100)
+        self.diff = diff
 
-
-    def render(self, itters, is_right=True)
+    def render(self, itters, is_right=True):
         itters = range(itters)
 
         turn = self.pen.right if is_right else self.pen.left
@@ -35,18 +34,19 @@ class Dynamicfigure(Figure):
         for i in itters:
             self.size -= self.diff
 
-            self.pen.forward(self.seze)
+            self.pen.forward(self.size)
             turn(self.angle)
 
         turtle.done()
 
-class ColorfulFugure(Figure):
-    def __init__(self, color='black', width=1, angle=60, size=100, colors=None:
+    
+class ColorfulFigure(Figure):
+    def __init__(self, color='black', width=1, angle=60, size=100, colors=None):
         super().__init__(color='black', width=1, angle=60, size=100)
-        self.colors = colors if colors else []
+        self.colors = colors if colors else [] 
 
-    def render(self, itters, is_right=True)
-        itters = rande(itters)
+    def render(self, itters, is_right=True):
+        itters = range(itters)
         colors_count = len(self.colors)
 
         turn = self.pen.right if is_right else self.pen.left
@@ -56,6 +56,8 @@ class ColorfulFugure(Figure):
 
             self.pen.color(cur_color)
             self.pen.forward(self.size)
-            turun(self.angle)
+            turn(self.angle)
 
         turtle.done()
+
+        

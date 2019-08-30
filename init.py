@@ -1,8 +1,4 @@
-from figures import Figure, Dynamicfigure, ColorfulFugure
+from figures import Figure, DynamicFigure, ColorfulFigure
 
-figure = ColorfulFugure(['red', 'green', 'yellow', 'purple', 'blue'])
+figure = ColorfulFigure(colors=['red', 'green', 'yellow', 'purple', 'blue'])
 figure.render(200)
-
-
-
-# разноцветные динмаческие фигуры и контроль скорости открисовки turtle.pen().speed()
